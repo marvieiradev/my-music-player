@@ -47,9 +47,9 @@
       }
 
       .album-art {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
         background: #333;
         background-size: cover;
         background-position: center;
@@ -227,16 +227,34 @@
       // Playlist de músicas - FÁCIL DE ADICIONAR NOVAS MÚSICAS AQUI
       const playlist = [
         {
-          title: "Coração na Sarjeta",
+          title: "Mensagem Não Visualizada",
           artist: "Forró Doce Pecado",
           albumArt: "images/cover.png",
           audioUrl: "music/music1.mp3",
         },
         {
-          title: "Te amo, mas te bloqueei",
+          title: "Te Amo, Mas Te Bloqueei",
           artist: "Forró Doce Pecado",
           albumArt: "images/cover.png",
           audioUrl: "music/music2.mp3",
+        },
+        {
+          title: "Você Me Deixou em Vários Tons",
+          artist: "Forró Doce Pecado",
+          albumArt: "images/cover.png",
+          audioUrl: "music/music3.mp3",
+        },
+        {
+          title: "Volta Pra Mim, Nem Que Seja Só Hoje",
+          artist: "Forró Doce Pecado",
+          albumArt: "images/cover.png",
+          audioUrl: "music/music4.mp3",
+        },
+        {
+          title: "Coração na Sarjeta",
+          artist: "Forró Doce Pecado",
+          albumArt: "images/cover.png",
+          audioUrl: "music/music5.mp3",
         },
       ];
 
@@ -322,21 +340,21 @@
         if (isPlaying) {
           audioPlayer.pause();
           playPauseBtn.textContent = "▶";
-          albumArt.classList.remove("playing");
+          //albumArt.classList.remove("playing");
           isPlaying = false;
         } else {
           audioPlayer
             .play()
             .then(() => {
               playPauseBtn.textContent = "⏸";
-              albumArt.classList.add("playing");
+              //albumArt.classList.add("playing");
               isPlaying = true;
             })
             .catch((error) => {
               console.error("Erro ao reproduzir áudio:", error);
               // Fallback para demonstração visual
               playPauseBtn.textContent = "⏸";
-              albumArt.classList.add("playing");
+              //albumArt.classList.add("playing");
               isPlaying = true;
             });
         }
