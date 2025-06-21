@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music Player</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
       * {
         margin: 0;
@@ -214,9 +218,15 @@
       </div>
 
       <div class="controls">
-        <button class="control-btn prev" id="prevBtn">⏮</button>
-        <button class="control-btn play-pause" id="playPauseBtn">▶</button>
-        <button class="control-btn next" id="nextBtn">⏭</button>
+        <button class="control-btn prev" id="prevBtn">
+          <i class="fa-solid fa-backward"></i>
+        </button>
+        <button class="control-btn play-pause" id="playPauseBtn">
+          <i class="fa-solid fa-play"></i>
+        </button>
+        <button class="control-btn next" id="nextBtn">
+          <i class="fa-solid fa-forward"></i>
+        </button>
       </div>
     </div>
 
@@ -251,10 +261,22 @@
           audioUrl: "music/music4.mp3",
         },
         {
-          title: "Coração na Sarjeta",
+          title: "Amor de Motel, Coração de Papel",
           artist: "Forró Doce Pecado",
           albumArt: "images/cover.png",
           audioUrl: "music/music5.mp3",
+        },
+        {
+          title: "Coração na Sarjeta",
+          artist: "Forró Doce Pecado",
+          albumArt: "images/cover.png",
+          audioUrl: "music/music6.mp3",
+        },
+        {
+          title: "Saudade no 220V",
+          artist: "Forró Doce Pecado",
+          albumArt: "images/cover.png",
+          audioUrl: "music/music7.mp3",
         },
       ];
 
@@ -339,21 +361,21 @@
       function togglePlayPause() {
         if (isPlaying) {
           audioPlayer.pause();
-          playPauseBtn.textContent = "▶";
+          playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
           //albumArt.classList.remove("playing");
           isPlaying = false;
         } else {
           audioPlayer
             .play()
             .then(() => {
-              playPauseBtn.textContent = "⏸";
+              playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
               //albumArt.classList.add("playing");
               isPlaying = true;
             })
             .catch((error) => {
               console.error("Erro ao reproduzir áudio:", error);
               // Fallback para demonstração visual
-              playPauseBtn.textContent = "⏸";
+              playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
               //albumArt.classList.add("playing");
               isPlaying = true;
             });
